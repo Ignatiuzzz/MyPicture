@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación web desarrollada con el stack MERN (MongoDB, Express, React, Node.js). A continuación, se detallan los pasos necesarios para configurar y ejecutar el proyecto localmente.
 
-![MongoDB]([URL_de_la_imagen](https://www.turing.com/blog/wp-content/uploads/2022/02/Mongo-DB-Features.jpg)) ![Express NodeJs]([URL_de_la_imagen](https://i.ytimg.com/vi/wVo-UMit5Ig/maxresdefault.jpg)) ![React]([URL_de_la_imagen](https://oneteamsolutions.in/blogoneteam/wp-content/uploads/2020/05/REACT-JS-KOCHI.png))
+![MongoDB](https://www.turing.com/blog/wp-content/uploads/2022/02/Mongo-DB-Features.jpg) ![Express NodeJs](https://i.ytimg.com/vi/wVo-UMit5Ig/maxresdefault.jpg) ![React](https://blog.scottlogic.com/dkerr/assets/featured/react.png)
 
 ## Estructura del Proyecto
 
