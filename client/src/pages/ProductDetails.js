@@ -61,7 +61,7 @@ const DetallesDelProducto = () => {
             Precio:
             {producto?.precio?.toLocaleString("es-ES", {
               style: "currency",
-              currency: "EUR",
+              currency: "USD",
             })}
           </h6>
           <h6>Categoría: {producto?.categoria?.nombre}</h6>
@@ -88,7 +88,7 @@ const DetallesDelProducto = () => {
                   <h5 className="card-title card-precio">
                     {p.precio.toLocaleString("es-ES", {
                       style: "currency",
-                      currency: "EUR",
+                      currency: "USD",
                     })}
                   </h5>
                 </div>

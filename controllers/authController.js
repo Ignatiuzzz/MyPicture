@@ -255,3 +255,21 @@ export const orderStatusController = async (req, res) => {
     });
   }
 };
+// Eliminar orden
+export const deleteOrderController = async (req, res) => {
+  try {
+    const { orderId } = req.params; // Obtener el ID de la orden desde los parámetros de la ruta
+    await orderModel.findByIdAndDelete(orderId); // Eliminar la orden
+    res.status(200).send({
+      success: true,
+      message: "Orden eliminada exitosamente",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error al eliminar la orden",
+      error,
+    });
+  }
+};

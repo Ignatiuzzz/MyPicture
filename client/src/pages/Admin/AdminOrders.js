@@ -5,16 +5,16 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
-import { Select } from "antd";
+import { Select, Button } from "antd"; // Importa Button de antd si no está ya importado
 const { Option } = Select;
 
 const AdminOrders = () => {
   const [status, setStatus] = useState([
-    "Not Process",
-    "Processing",
-    "Shipped",
-    "deliverd",
-    "cancel",
+    "No procesado",
+    "Procesado",
+    "Enviado",
+    "Entregado",
+    "Cancelado",
   ]);
   const [changeStatus, setCHangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
@@ -42,6 +42,21 @@ const AdminOrders = () => {
       console.log(error);
     }
   };
+
+  const handleDeleteOrder = async (orderId) => {
+    // Confirmación antes de proceder con la eliminación
+    if (window.confirm("¿Estás seguro de querer eliminar esta orden?")) {
+      try {
+        await axios.delete(`/api/v1/auth/order/${orderId}`);
+        toast.success("Orden eliminada exitosamente");
+        getOrders();
+      } catch (error) {
+        console.log(error);
+        toast.error("Error al eliminar la orden");
+      }
+    }
+  };
+
   return (
     <Layout title={"All Orders Data"}>
       <div className="row dashboard">
@@ -57,11 +72,11 @@ const AdminOrders = () => {
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Buyer</th>
-                      <th scope="col"> date</th>
-                      <th scope="col">Payment</th>
-                      <th scope="col">Quantity</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Comprador</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Pago</th>
+                      <th scope="col">Cantidad</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -104,7 +119,12 @@ const AdminOrders = () => {
                         <p>{p.description.substring(0, 30)}</p>
                         <p>Price : {p.price}</p>
                       </div>
+                      <Button
+                        type="danger"
+                        onClick={() => handleDeleteOrder(o._id)}
+                        style={{ margin: '10px 0' }}>Eliminar Orden</Button>
                     </div>
+
                   ))}
                 </div>
               </div>
