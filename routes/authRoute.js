@@ -8,6 +8,7 @@ import {
   getOrdersController,
   getAllOrdersController,
   orderStatusController,
+  deleteOrderController,
 } from "../controllers/authController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 
@@ -44,6 +45,9 @@ router.get("/orders", requireSignIn, getOrdersController);
 
 //all orders
 router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController);
+
+// Ruta para eliminar una orden (solo admin)
+router.delete("/order/:orderId", requireSignIn, isAdmin, deleteOrderController);
 
 // order status update
 router.put(

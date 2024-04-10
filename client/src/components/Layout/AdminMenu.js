@@ -30,12 +30,18 @@ const AdminMenu = () => {
           >
             Ordenes
           </NavLink>
-          {/* <NavLink
+          <NavLink
+            to="/dashboard/admin/adminList"
+            className="list-group-item list-group-item-action"
+          >
+            Administradores
+          </NavLink>
+          <NavLink
             to="/dashboard/admin/users"
             className="list-group-item list-group-item-action"
           >
             Users
-          </NavLink> */}
+          </NavLink>
         </div>
       </div>
     </>

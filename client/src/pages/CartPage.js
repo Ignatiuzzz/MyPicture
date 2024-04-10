@@ -26,7 +26,7 @@ const CartPage = () => {
       });
       return total.toLocaleString("es-ES", {
         style: "currency",
-        currency: "EUR",
+        currency: "USD",
       });
     } catch (error) {
       console.log(error);
