@@ -2,6 +2,8 @@
 
 Este proyecto es una aplicación web desarrollada con el stack MERN (MongoDB, Express, React, Node.js). A continuación, se detallan los pasos necesarios para configurar y ejecutar el proyecto localmente.
 
+![MongoDB](https://www.turing.com/blog/wp-content/uploads/2022/02/Mongo-DB-Features.jpg) ![Express NodeJs](https://i.ytimg.com/vi/wVo-UMit5Ig/maxresdefault.jpg) ![React](https://blog.scottlogic.com/dkerr/assets/featured/react.png)
+
 ## Estructura del Proyecto
 
 El proyecto se divide en dos partes principales: el cliente (`client`) creado con React y el servidor (`backend`) construido con Express y Node.js.
