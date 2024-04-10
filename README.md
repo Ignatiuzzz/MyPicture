@@ -49,7 +49,7 @@ El proyecto se divide en dos partes principales: el cliente (`client`) creado co
 - Considera implementar autenticación con JWT o manejo de sesiones.
 - No olvides seguir las mejores prácticas de seguridad para proteger tu aplicación.
 
-#DESARROLLADORES Y SUS FUNCIONES
+#DESARROLLADORES Y SUS FUNCIONES  
 Ignatiuzz (Ignacio Garcia) -> Diseno Frontend  
 TheBig-C (Cesar vera) -> Backend  
 DIN (Christian Mendoza) -> Backend  
