@@ -57,11 +57,11 @@ const AdminOrders = () => {
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Buyer</th>
-                      <th scope="col"> date</th>
-                      <th scope="col">Payment</th>
-                      <th scope="col">Quantity</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Comprador</th>
+                      <th scope="col"> Fecha</th>
+                      <th scope="col">Pago</th>
+                      <th scope="col">Cantidad</th>
                     </tr>
                   </thead>
                   <tbody>
