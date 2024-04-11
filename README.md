@@ -44,20 +44,7 @@ El proyecto se divide en dos partes principales: el cliente (`client`) creado co
 2. **Iniciar la aplicación React**:
    - En otra terminal, ve a `client` y ejecuta `npm start`.
 
-## Notas Adicionales
-
-- Considera implementar autenticación con JWT o manejo de sesiones.
-- No olvides seguir las mejores prácticas de seguridad para proteger tu aplicación.
-
-<<<<<<< HEAD
-#DESARROLLADORES Y SUS FUNCIONES  
-Ignatiuzz (Ignacio Garcia) -> Diseno Frontend  
-TheBig-C (Cesar vera) -> Backend  
-DIN (Christian Mendoza) -> Backend  
-Manu20033 (Manuel Delgadillo) -> Diseno Frontend  
-=======
-## Autor
-
-- [Tu Nombre] - Desarrollador del Proyecto N6: MY PICTURE
->>>>>>> ignacio
-
+#DESARROLLADORES Y SUS FUNCIONES Ignatiuzz (Ignacio Garcia) -> Diseno Frontend
+TheBig-C (Cesar vera) -> Backend
+DIN (Christian Mendoza) -> Backend
+Manu20033 (Manuel Delgadillo) -> Diseno Frontend
