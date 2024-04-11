@@ -342,36 +342,35 @@ export const braintreeTokenController = async (req, res) => {
   }
 };
 
-//payment
 export const brainTreePaymentController = async (req, res) => {
   try {
-    const { nonce, cart } = req.body;
-    let total = 0;
-    cart.map((i) => {
-      total += i.price;
-    });
-    let newTransaction = gateway.transaction.sale(
-      {
-        amount: total,
-        paymentMethodNonce: nonce,
-        options: {
-          submitForSettlement: true,
-        },
-      },
-      function (error, result) {
-        if (result) {
-          const order = new orderModel({
-            products: cart,
-            payment: result,
-            buyer: req.user._id,
-          }).save();
-          res.json({ ok: true });
-        } else {
-          res.status(500).send(error);
-        }
+    const { cart } = req.body; // Se omite `nonce` ya que no se realizará el cobro real.
+    
+    // Simulamos una respuesta exitosa de Braintree para fines de desarrollo.
+    const simulatedBraintreeResponse = {
+      success: true,
+      transaction: {
+        id: "simulated_transaction_id", // Un ID de transacción simulado.
+        amount: cart.reduce((total, item) => total + item.price, 0).toString(),
+        status: "submitted_for_settlement",
+        // Puedes añadir más campos según lo que esperes manejar en tu orden.
       }
-    );
+    };
+
+    try {
+      await new orderModel({
+        products: cart,
+        payment: simulatedBraintreeResponse,
+        buyer: req.user._id, // Asegúrate de tener esta información disponible.
+      }).save();
+
+      res.json({ ok: true, message: "Orden agregada exitosamente en modo de prueba." });
+    } catch (saveError) {
+      console.error('Error saving order:', saveError);
+      res.status(500).send('Error saving order');
+    }
   } catch (error) {
-    console.log(error);
+    console.error('Server error:', error);
+    res.status(500).send('Server error');
   }
 };
